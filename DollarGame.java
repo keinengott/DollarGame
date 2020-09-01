@@ -10,6 +10,9 @@ public class DollarGame {
     public final static int VERT_MAX = 7;
 
     public final static int VERT_MIN = 2;
+    public static final Scanner reader = new Scanner(System.in);
+    
+    
     public static final ArrayList<Vertex> verticesArray = new ArrayList();
 
     public static class Vertex {
@@ -44,6 +47,11 @@ public class DollarGame {
         {
             System.out.println(v.id);
         }
+        
+        while (true)
+        {
+            
+        }
     }
 
     /**
@@ -58,9 +66,6 @@ public class DollarGame {
 
         //isValid:  If this is true, then the user entered valid input.
         boolean isValid = false;
-
-        //reader:  This scanner takes in input.
-        Scanner reader = new Scanner(System.in);
 
         System.out.println("Please enter a number of vertices for the Dollar Game between " + VERT_MIN + " and " + VERT_MAX);
 
@@ -112,9 +117,6 @@ public class DollarGame {
         //isValid:  If this is true, then the user entered valid input.
         boolean isValid = false;
 
-        //reader:  This scanner takes in input.
-        Scanner reader2 = new Scanner(System.in);
-
         System.out.println("Please enter a number of edges for the Dollar Game.");
 
         System.out.println("The minimum amount of edges required is " + (vertices - 1));
@@ -122,7 +124,7 @@ public class DollarGame {
         do {
 
             try {
-                edgeValue = reader2.nextInt();
+                edgeValue = reader.nextInt();
 
                 if (edgeValue >= (vertices - 1)) {
                     //If the input is valid, isValid = true.
@@ -150,4 +152,5 @@ public class DollarGame {
         return edgeValue;
 
     }
+
 }
