@@ -77,7 +77,7 @@ public class DollarGame {
      
         vertices = getVertices();
      
-        edges = getEdges();
+        edges = getEdges(vertices);
     }
  
  
