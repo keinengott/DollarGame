@@ -74,10 +74,23 @@ public class DollarGame {
      
         //edges: the edges the user enters for later.
         int edges;
-     
-        vertices = getVertices();
-     
-        edges = getEdges();
+	
+		vertices = getVertices();
+		
+	//If getVertices returns 0, that's the signal to quit.
+	if (vertices == 0)
+	{
+		return;
+	}
+	
+		
+	edges = getEdges(vertices);
+	
+	if (edges == 0)
+	{
+		return;
+	}
+		
     }
  
  
