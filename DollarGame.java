@@ -150,7 +150,6 @@ public class DollarGame {
         } while (isValid == false);
 
         return edgeValue;
-
     }
 
 }
