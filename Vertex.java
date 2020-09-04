@@ -3,10 +3,10 @@ package project2;
 
 
 
-/*
+/**
+ * Class Vertex()
  * 
- * 
- * 
+ * Holds the name, current dollars, and methods to get and set dollars for the vertex.
  * 
  * 
  * 
