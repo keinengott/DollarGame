@@ -112,7 +112,7 @@ public class Main {
         pat += toUpperCase(c);
         pat = pat + "a-" + c + "]";
         pat += pat;
-        // 'pattrn is used by the scanner to validate the input'
+        // 'pattern' is used by the scanner to validate the input'
         Pattern pattern = Pattern.compile(pat);
         // this loop sets up the vertices in the game and exits when they are all setup
         while (true) {
@@ -162,7 +162,7 @@ public class Main {
     }
 
     /*
-    * This function performs the task of connected a vertex to another by
+    * This function performs the task of connecting a vertex to another vertex by
     * appending the new vertex id to the 'connectedVertices' member of Vertex
      */
     private static void connectVertices(String input) {
@@ -179,7 +179,7 @@ public class Main {
 
     /*
     * getMove() prompts the user for a move and ensures that the inputted move is valid.
-    * To be valid, the input must be a 'q' or an existing vertex id.
+    * To be valid, the input must be a 'q', 'Q' or an existing vertex id.
      */
     private static void getMove() {
         while (true) {
@@ -211,7 +211,7 @@ public class Main {
     }
 
     /*
-    * This function validates that the argument is the id of a valid Vertex in the game state
+    * This function validates that the argument is an id of a valid Vertex in the game state
      */
     private static boolean isValidVertex(String move) {
         for (Vertex v : verticesArray) {
@@ -263,14 +263,11 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        //vertices:  the vertices count that the user inputs later.
-        int vertices;
+        //vertices:  the vertices count that the user inputs
+        int vertices = getVertices();
 
-        //edges: the edges the user enters for later.
-        int edges;
-
-        vertices = getVertices();
-        edges = getEdges(vertices);
+        //edges: the edges the user enters
+        int edges = getEdges(vertices);
 
         // this loop creates the Vertex objects and assigns them an alphabetical id
         for (int i = 0; i < vertices; i++) {
@@ -289,9 +286,11 @@ public class Main {
             getMove();
         }
         if (isSolved()) {
-            System.out.println("You win!" + " You made " + totalMoves + " moves");
+            System.out.println("You win!" + " You made " + totalMoves + " moves. Final configuration: ");
+            printBoardState();
         } else {
-            System.out.println("You lose!" + " You made " + totalMoves + " moves");
+            System.out.println("You lose!" + " You made " + totalMoves + " moves.");
+            printBoardState();
         }
     }
 
