@@ -355,8 +355,6 @@ public class Main {
         int edgeMax = (vertices * (vertices-1))/2;
         
         int edgeMin = (vertices - 1);
-        
-        
 
         //isValid:  If this is true, then the user entered valid input.
         boolean isValid = false;
@@ -364,24 +362,28 @@ public class Main {
         System.out.println("Please enter a number of edges for the Dollar Game.");
         System.out.println("The minimum amount of edges required is " + edgeMin);
         System.out.println("The maximum amount of edges required is " + edgeMax);
-        
 
         do {
             try {
                 edgeValue = reader.nextInt();
                 if (edgeValue >= edgeMin && edgeValue <= edgeMax) {
+
                     //If the input is valid, isValid = true.
                     isValid = true;
                 } else {
                     //The user entered an integer, but out of bounds.
+
                     System.out.println("Error.\nInvalid Value\nPlease enter an whole number between " + edgeMin  + " and " + edgeMax);
+
 
                     isValid = false;
                 }
             } catch (InputMismatchException e) {
 
                 //The user entered something that wasn't an integer.
+
                 System.out.println("Error.\nInvalid Entry\nPlease enter an whole number between " + edgeMin  + " and " + edgeMax);
+
                 reader.next();
                 isValid = false;
             }
