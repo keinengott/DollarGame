@@ -48,6 +48,7 @@
 //Needed for user input.
 import java.util.Scanner;
 import static java.lang.Character.toUpperCase;
+import static java.lang.Character.toLowerCase;
 import java.util.InputMismatchException;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
@@ -135,8 +136,8 @@ public class Main {
     }
 
     /*
-    * validateEdge() returns whether the edge entered by the user is valid
-    * invalid edges include connecting a vertex to itself or attempting to 
+    * validateEdge() returns whether the edge entered by the user is valid.
+    * Invalid edges include connecting a vertex to itself or attempting to 
     * connect already connected vertices
      */
     private static boolean validateEdge(String input) {
@@ -215,7 +216,7 @@ public class Main {
      */
     private static boolean isValidVertex(String move) {
         for (Vertex v : verticesArray) {
-            if (v.id == move.charAt(0)) {
+            if (v.id == toUpperCase(move.charAt(0)) || v.id == toLowerCase(move.charAt(0))) {
                 return true;
             }
         }
@@ -232,17 +233,17 @@ public class Main {
     private static void takeAction(String action, String input) {
         for (Vertex v : verticesArray) {
             if (action.equalsIgnoreCase("g")) {
-                if (v.id == input.charAt(0)) {
+                if (v.id == toLowerCase(input.charAt(0))) {
                     v.dollarAmount -= v.connectedVertices.size();
                 }
-                if (v.connectedVertices.contains(input.charAt(0))) {
+                if (v.connectedVertices.contains(toLowerCase(input.charAt(0)))) {
                     v.dollarAmount += 1;
                 }
             } else {
-                if (v.id == input.charAt(0)) {
+                if (v.id == toLowerCase(input.charAt(0))) {
                     v.dollarAmount += v.connectedVertices.size();
                 }
-                if (v.connectedVertices.contains(input.charAt(0))) {
+                if (v.connectedVertices.contains(toLowerCase(input.charAt(0)))) {
                     v.dollarAmount -= 1;
                 }
             }
