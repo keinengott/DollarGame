@@ -351,9 +351,10 @@ public class Main {
         //edgeValue: Should hold the number of vertices from the user's input.
         int edgeValue = 0;
         
-        
+        //edgeMax: The calculated maximum value for the amount of edges we can make.
         int edgeMax = (vertices * (vertices-1))/2;
         
+        //edgeMin: The calculated minimum value for the amount of edges we can make.
         int edgeMin = (vertices - 1);
 
         //isValid:  If this is true, then the user entered valid input.
